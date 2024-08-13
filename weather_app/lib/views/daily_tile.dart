@@ -3,9 +3,9 @@ import 'package:weather_app/model/data_converter.dart';
 import 'package:weather_app/model/grouped_weather.dart';
 
 class DailyTile extends StatelessWidget {
-  GroupedWeather day;
+  final GroupedWeather day;
 
-  DailyTile({required this.day});
+  const DailyTile({super.key, required this.day});
 
   @override
   Widget build(BuildContext context) {

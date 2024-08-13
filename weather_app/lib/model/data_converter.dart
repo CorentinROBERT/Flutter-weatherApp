@@ -12,7 +12,7 @@ class DataConverter {
 
   List<GroupedWeather> byDay(ApiResponse response) {
     List<GroupedWeather> daily = [];
-    response.list.forEach((forecast) {
+    for (var forecast in response.list) {
       var date = DateTime.fromMillisecondsSinceEpoch(forecast.dt * 1000);
       String day = dayFromInt(date.weekday);
       int hour = date.hour;
@@ -31,7 +31,7 @@ class DataConverter {
           daily[index].icon = icon;
         }
       }
-    });
+    }
     return daily;
   }
 

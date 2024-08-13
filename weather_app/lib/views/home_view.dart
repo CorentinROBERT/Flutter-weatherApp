@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:location/location.dart';
 import 'package:weather_app/model/api_response.dart';
 import 'package:weather_app/model/geoposition.dart';
 import 'package:weather_app/services/api_service.dart';
@@ -30,7 +29,7 @@ class HomeState extends State<HomeView> {
         appBar: AppBar(
           title: Text(userPosition?.city ?? "My weather app"),
         ),
-        body: response == null ? NoDataView() : ForecastView(response!));
+        body: response == null ? const NoDataView() : ForecastView(response!));
   }
 
   getUserLocation() async {

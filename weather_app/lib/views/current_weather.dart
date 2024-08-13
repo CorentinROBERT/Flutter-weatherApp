@@ -3,9 +3,9 @@ import 'package:weather_app/model/api_response.dart';
 import 'package:weather_app/model/data_converter.dart';
 
 class CurrentWeather extends StatelessWidget {
-  Forecast forecast;
+  final Forecast forecast;
 
-  CurrentWeather({super.key, required this.forecast});
+  const CurrentWeather({super.key, required this.forecast});
 
   @override
   Widget build(BuildContext context) {

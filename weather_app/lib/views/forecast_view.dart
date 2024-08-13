@@ -4,7 +4,6 @@ import 'package:weather_app/model/data_converter.dart';
 import 'package:weather_app/model/grouped_weather.dart';
 import 'package:weather_app/views/current_weather.dart';
 import 'package:weather_app/views/daily_tile.dart';
-import 'package:weather_app/views/no_data_view.dart';
 
 class ForecastView extends StatelessWidget {
   final ApiResponse response;
