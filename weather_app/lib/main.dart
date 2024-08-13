@@ -18,6 +18,16 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(
+              fontSize: 75,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).primaryColor),
+          headlineMedium: TextStyle(
+              fontSize: 30, color: Theme.of(context).primaryColorDark),
+          headlineSmall:
+              const TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

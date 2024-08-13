@@ -4,8 +4,12 @@ import 'package:weather_app/model/api_response.dart';
 import 'package:weather_app/model/geoposition.dart';
 import 'package:weather_app/services/api_service.dart';
 import 'package:weather_app/services/location_service.dart';
+import 'package:weather_app/views/forecast_view.dart';
+import 'package:weather_app/views/no_data_view.dart';
 
 class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
   @override
   State<StatefulWidget> createState() => HomeState();
 }
@@ -23,23 +27,10 @@ class HomeState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(userPosition?.city ?? "My weather app"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Notre position :\nlatitude: ${userPosition?.lat}\nlongitude: ${userPosition?.long}",
-              textAlign: TextAlign.center,
-            ),
-            Text("cnt: ${response?.cnt.toString() ?? "0"}")
-          ],
+        appBar: AppBar(
+          title: Text(userPosition?.city ?? "My weather app"),
         ),
-      ),
-    );
+        body: response == null ? NoDataView() : ForecastView(response!));
   }
 
   getUserLocation() async {

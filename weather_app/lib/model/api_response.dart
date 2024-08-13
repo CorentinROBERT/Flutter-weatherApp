@@ -34,12 +34,10 @@ class Forecast {
   Forecast.fromJson(Map<String, dynamic> map)
       : dt = map["dt"],
         main = Main.fromJson(map["main"]),
-        weather = map["list"] != null
-            ? DataConverter()
-                .listMappable(map["weather"])
-                .map((e) => Weather.fromJson(e))
-                .toList()
-            : [],
+        weather = DataConverter()
+            .listMappable(map["weather"])
+            .map((e) => Weather.fromJson(e))
+            .toList(),
         clouds = Clouds.fromJson(map["clouds"]),
         wind = Wind.fromJson(map["wind"]),
         visibility = map["visibility"],
@@ -78,6 +76,7 @@ class Weather {
   String main;
   String description;
   String icon;
+
   Weather.fromJson(Map<String, dynamic> map)
       : id = map["id"],
         main = map["main"],

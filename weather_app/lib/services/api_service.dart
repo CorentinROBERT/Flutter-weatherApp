@@ -22,9 +22,10 @@ class ApiService {
   Future<ApiResponse?> callApi(GeoPosition position) async {
     try {
       final queryString = prepareQuery(position);
+      print(queryString);
       final call = await get(Uri.parse(queryString));
       Map<String, dynamic> map = json.decode(call.body);
-      print(map);
+      //print(map);
       return ApiResponse.fromJson(map);
     } catch (e) {
       print(e);

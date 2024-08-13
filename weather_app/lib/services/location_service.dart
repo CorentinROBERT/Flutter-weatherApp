@@ -6,15 +6,7 @@ import 'package:weather_app/model/geoposition.dart';
 class LocationService {
   Future<LocationData?> getPosition() async {
     try {
-      PermissionStatus? _permissionGranted;
       Location location = Location();
-      var isEnable = await location.serviceEnabled();
-      if (_permissionGranted == PermissionStatus.denied) {
-        _permissionGranted = await location.requestPermission();
-        if (_permissionGranted != PermissionStatus.granted) {
-          return null;
-        }
-      }
       return location.getLocation();
     } on PlatformException catch (e) {
       print("error ${e.message}");
@@ -30,7 +22,7 @@ class LocationService {
       final long = position.longitude ?? 0.0;
       List<geocoding.Placemark> placemarks =
           await geocoding.placemarkFromCoordinates(lat, long);
-      print(placemarks);
+      //print(placemarks);
       final firstChoice = placemarks.first;
       final GeoPosition geoPosition =
           GeoPosition(city: firstChoice.locality ?? "", lat: lat, long: long);
