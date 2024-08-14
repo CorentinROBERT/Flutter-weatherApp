@@ -15,6 +15,7 @@ class CurrentWeather extends StatelessWidget {
       height: size.height / 3,
       padding: const EdgeInsets.all(10),
       child: Card(
+        color: Theme.of(context).scaffoldBackgroundColor,
         elevation: 7,
         child: Container(
           padding: const EdgeInsets.all(10),
