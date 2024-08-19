@@ -1,29 +1,9 @@
-# README #
+# Weather App #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is an app to learn how weather api works with geocoding and location of device.
 
-### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+contact me to corentin.robert@outlook.com
