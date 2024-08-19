@@ -60,8 +60,6 @@ class HomeState extends State<HomeView> {
           positionToCall = loc;
         });
         callApi();
-      } else if (cities.isNotEmpty) {
-        onTap(cities.first);
       }
     } catch (e) {
       print(e);
