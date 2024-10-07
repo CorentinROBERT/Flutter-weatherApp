@@ -28,7 +28,7 @@ class Forecast {
   List<Weather> weather;
   Clouds clouds;
   Wind wind;
-  int visibility;
+  double visibility;
   String dt_txt;
 
   Forecast.fromJson(Map<String, dynamic> map)
@@ -40,7 +40,7 @@ class Forecast {
             .toList(),
         clouds = Clouds.fromJson(map["clouds"]),
         wind = Wind.fromJson(map["wind"]),
-        visibility = map["visibility"],
+        visibility = map["visibility"]?.toDouble() ?? 0.0,
         dt_txt = map["dt_txt"];
 }
 
